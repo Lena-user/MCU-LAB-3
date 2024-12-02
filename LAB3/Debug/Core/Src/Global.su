@@ -1,0 +1,4 @@
+Global.c:27:6:init_Led	4	static
+Global.c:36:6:update_Led_Traffic	4	static
+Global.c:64:6:display_Led_Buffer	16	static
+Global.c:69:6:scan_Led	8	static

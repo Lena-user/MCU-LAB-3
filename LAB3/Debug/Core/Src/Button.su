@@ -1,0 +1,4 @@
+Button.c:20:5:isSelectMode	4	static
+Button.c:30:5:isModifyMode	4	static
+Button.c:40:5:isSetMode	4	static
+Button.c:51:6:getKeyInput	16	static

@@ -1,0 +1,3 @@
+Led7-Segment.c:10:6:display_Led7_Segment1	16	static
+Led7-Segment.c:108:6:display_Led7_Segment2	16	static
+Led7-Segment.c:207:6:display_Led7_Segment	16	static
