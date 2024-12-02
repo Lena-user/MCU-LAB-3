@@ -20,7 +20,6 @@ void FSM_Automatic_run()
 		HAL_GPIO_WritePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin, SET);
 		status = AUTO_TRAFFIC_1_GREEN;
 		setTimer1(durationGreen);
-		setTimer4(500);
 		break;
 	case AUTO_TRAFFIC_1_GREEN:
 		HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, SET);
@@ -31,6 +30,7 @@ void FSM_Automatic_run()
 		{
 		case INIT:
 			blinkyMode = Blinky_Led_1;
+			setTimer4(500);
 			break;
 		case Blinky_Led_1:
 			HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, RESET);

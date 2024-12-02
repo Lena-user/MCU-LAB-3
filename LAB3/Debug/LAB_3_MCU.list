@@ -37,11 +37,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00016d2e  00000000  00000000  0002c660  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000babd  00000000  00000000  0004338e  2**0
+ 17 .debug_line   0000babf  00000000  00000000  0004338e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008265c  00000000  00000000  0004ee4b  2**0
+ 18 .debug_str    0008265c  00000000  00000000  0004ee4d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000d14a7  2**0
+ 19 .comment      00000053  00000000  00000000  000d14a9  2**0
                   CONTENTS, READONLY
  20 .debug_frame  00002894  00000000  00000000  000d14fc  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -411,7 +411,7 @@ void FSM_Automatic_run()
  800034e:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
  8000352:	bf00      	nop
  8000354:	08000369 	.word	0x08000369
- 8000358:	080003c5 	.word	0x080003c5
+ 8000358:	080003bd 	.word	0x080003bd
  800035c:	08000485 	.word	0x08000485
  8000360:	08000539 	.word	0x08000539
  8000364:	080005f7 	.word	0x080005f7
@@ -456,42 +456,42 @@ void FSM_Automatic_run()
  80003b2:	681b      	ldr	r3, [r3, #0]
  80003b4:	4618      	mov	r0, r3
  80003b6:	f001 f8d9 	bl	800156c <setTimer1>
-		setTimer4(500);
- 80003ba:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
- 80003be:	f001 f923 	bl	8001608 <setTimer4>
 		break;
- 80003c2:	e189      	b.n	80006d8 <FSM_Automatic_run+0x39c>
+ 80003ba:	e18d      	b.n	80006d8 <FSM_Automatic_run+0x39c>
 	case AUTO_TRAFFIC_1_GREEN:
 		HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, SET);
- 80003c4:	2201      	movs	r2, #1
- 80003c6:	2120      	movs	r1, #32
- 80003c8:	4896      	ldr	r0, [pc, #600]	; (8000624 <FSM_Automatic_run+0x2e8>)
- 80003ca:	f001 fe56 	bl	800207a <HAL_GPIO_WritePin>
+ 80003bc:	2201      	movs	r2, #1
+ 80003be:	2120      	movs	r1, #32
+ 80003c0:	4898      	ldr	r0, [pc, #608]	; (8000624 <FSM_Automatic_run+0x2e8>)
+ 80003c2:	f001 fe5a 	bl	800207a <HAL_GPIO_WritePin>
 		// HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
 		HAL_GPIO_WritePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin, SET);
- 80003ce:	2201      	movs	r2, #1
- 80003d0:	f44f 7100 	mov.w	r1, #512	; 0x200
- 80003d4:	4893      	ldr	r0, [pc, #588]	; (8000624 <FSM_Automatic_run+0x2e8>)
- 80003d6:	f001 fe50 	bl	800207a <HAL_GPIO_WritePin>
+ 80003c6:	2201      	movs	r2, #1
+ 80003c8:	f44f 7100 	mov.w	r1, #512	; 0x200
+ 80003cc:	4895      	ldr	r0, [pc, #596]	; (8000624 <FSM_Automatic_run+0x2e8>)
+ 80003ce:	f001 fe54 	bl	800207a <HAL_GPIO_WritePin>
 		// HAL_GPIO_WritePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin, SET);
 		switch(blinkyMode)
- 80003da:	4b94      	ldr	r3, [pc, #592]	; (800062c <FSM_Automatic_run+0x2f0>)
- 80003dc:	681b      	ldr	r3, [r3, #0]
- 80003de:	2bc8      	cmp	r3, #200	; 0xc8
- 80003e0:	d021      	beq.n	8000426 <FSM_Automatic_run+0xea>
- 80003e2:	2bc8      	cmp	r3, #200	; 0xc8
- 80003e4:	dc39      	bgt.n	800045a <FSM_Automatic_run+0x11e>
- 80003e6:	2b0a      	cmp	r3, #10
- 80003e8:	d002      	beq.n	80003f0 <FSM_Automatic_run+0xb4>
- 80003ea:	2b64      	cmp	r3, #100	; 0x64
- 80003ec:	d004      	beq.n	80003f8 <FSM_Automatic_run+0xbc>
- 80003ee:	e034      	b.n	800045a <FSM_Automatic_run+0x11e>
+ 80003d2:	4b96      	ldr	r3, [pc, #600]	; (800062c <FSM_Automatic_run+0x2f0>)
+ 80003d4:	681b      	ldr	r3, [r3, #0]
+ 80003d6:	2bc8      	cmp	r3, #200	; 0xc8
+ 80003d8:	d025      	beq.n	8000426 <FSM_Automatic_run+0xea>
+ 80003da:	2bc8      	cmp	r3, #200	; 0xc8
+ 80003dc:	dc3d      	bgt.n	800045a <FSM_Automatic_run+0x11e>
+ 80003de:	2b0a      	cmp	r3, #10
+ 80003e0:	d002      	beq.n	80003e8 <FSM_Automatic_run+0xac>
+ 80003e2:	2b64      	cmp	r3, #100	; 0x64
+ 80003e4:	d008      	beq.n	80003f8 <FSM_Automatic_run+0xbc>
+ 80003e6:	e038      	b.n	800045a <FSM_Automatic_run+0x11e>
 		{
 		case INIT:
 			blinkyMode = Blinky_Led_1;
- 80003f0:	4b8e      	ldr	r3, [pc, #568]	; (800062c <FSM_Automatic_run+0x2f0>)
- 80003f2:	2264      	movs	r2, #100	; 0x64
- 80003f4:	601a      	str	r2, [r3, #0]
+ 80003e8:	4b90      	ldr	r3, [pc, #576]	; (800062c <FSM_Automatic_run+0x2f0>)
+ 80003ea:	2264      	movs	r2, #100	; 0x64
+ 80003ec:	601a      	str	r2, [r3, #0]
+			setTimer4(500);
+ 80003ee:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+ 80003f2:	f001 f909 	bl	8001608 <setTimer4>
 			break;
  80003f6:	e030      	b.n	800045a <FSM_Automatic_run+0x11e>
 		case Blinky_Led_1:
@@ -984,7 +984,7 @@ void FSM_Settings_run()
  8000720:	4b98      	ldr	r3, [pc, #608]	; (8000984 <FSM_Settings_run+0x268>)
  8000722:	681b      	ldr	r3, [r3, #0]
  8000724:	2b03      	cmp	r3, #3
- 8000726:	f200 81d4 	bhi.w	8000ad2 <FSM_Settings_run+0x3b6>
+ 8000726:	f200 81d3 	bhi.w	8000ad0 <FSM_Settings_run+0x3b4>
  800072a:	a201      	add	r2, pc, #4	; (adr r2, 8000730 <FSM_Settings_run+0x14>)
  800072c:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
  8000730:	08000741 	.word	0x08000741
@@ -1000,7 +1000,7 @@ void FSM_Settings_run()
  8000748:	f7ff fd00 	bl	800014c <isSelectMode>
  800074c:	4603      	mov	r3, r0
  800074e:	2b01      	cmp	r3, #1
- 8000750:	f040 81c1 	bne.w	8000ad6 <FSM_Settings_run+0x3ba>
+ 8000750:	f040 81c0 	bne.w	8000ad4 <FSM_Settings_run+0x3b8>
 			{
 				setTimer2(500);
  8000754:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
@@ -1018,7 +1018,7 @@ void FSM_Settings_run()
  8000772:	6013      	str	r3, [r2, #0]
 			}
 			break;
- 8000774:	e1af      	b.n	8000ad6 <FSM_Settings_run+0x3ba>
+ 8000774:	e1ae      	b.n	8000ad4 <FSM_Settings_run+0x3b8>
 		case MODIFY_RED:
 			HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
  8000776:	2201      	movs	r2, #1
@@ -1126,7 +1126,7 @@ void FSM_Settings_run()
  8000848:	f7ff fc80 	bl	800014c <isSelectMode>
  800084c:	4603      	mov	r3, r0
  800084e:	2b01      	cmp	r3, #1
- 8000850:	f040 8143 	bne.w	8000ada <FSM_Settings_run+0x3be>
+ 8000850:	f040 8142 	bne.w	8000ad8 <FSM_Settings_run+0x3bc>
 			{
 				setTimer2(500);
  8000854:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
@@ -1144,7 +1144,7 @@ void FSM_Settings_run()
  8000872:	6013      	str	r3, [r2, #0]
 			}
 			break;
- 8000874:	e131      	b.n	8000ada <FSM_Settings_run+0x3be>
+ 8000874:	e130      	b.n	8000ad8 <FSM_Settings_run+0x3bc>
 		case MODIFY_YELLOW:
 			HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, SET);
  8000876:	2201      	movs	r2, #1
@@ -1264,7 +1264,7 @@ void FSM_Settings_run()
  8000956:	f7ff fbf9 	bl	800014c <isSelectMode>
  800095a:	4603      	mov	r3, r0
  800095c:	2b01      	cmp	r3, #1
- 800095e:	f040 80be 	bne.w	8000ade <FSM_Settings_run+0x3c2>
+ 800095e:	f040 80bd 	bne.w	8000adc <FSM_Settings_run+0x3c0>
 			{
 				setTimer2(500);
  8000962:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
@@ -1282,7 +1282,7 @@ void FSM_Settings_run()
  8000980:	6013      	str	r3, [r2, #0]
 			}
 			break;
- 8000982:	e0ac      	b.n	8000ade <FSM_Settings_run+0x3c2>
+ 8000982:	e0ab      	b.n	8000adc <FSM_Settings_run+0x3c0>
  8000984:	20000084 	.word	0x20000084
  8000988:	40010800 	.word	0x40010800
  800098c:	40010c00 	.word	0x40010c00
@@ -1377,7 +1377,7 @@ void FSM_Settings_run()
  8000a46:	f7ff fba5 	bl	8000194 <isSetMode>
  8000a4a:	4603      	mov	r3, r0
  8000a4c:	2b01      	cmp	r3, #1
- 8000a4e:	d11d      	bne.n	8000a8c <FSM_Settings_run+0x370>
+ 8000a4e:	d120      	bne.n	8000a92 <FSM_Settings_run+0x376>
 			{
 				durationGreen = modifyGreen * 1000;
  8000a50:	4b27      	ldr	r3, [pc, #156]	; (8000af0 <FSM_Settings_run+0x3d4>)
@@ -1391,82 +1391,84 @@ void FSM_Settings_run()
  8000a60:	4b28      	ldr	r3, [pc, #160]	; (8000b04 <FSM_Settings_run+0x3e8>)
  8000a62:	220a      	movs	r2, #10
  8000a64:	601a      	str	r2, [r3, #0]
-				modeFSM = (modeFSM + 1) % 4;
- 8000a66:	4b28      	ldr	r3, [pc, #160]	; (8000b08 <FSM_Settings_run+0x3ec>)
- 8000a68:	681b      	ldr	r3, [r3, #0]
- 8000a6a:	3301      	adds	r3, #1
- 8000a6c:	425a      	negs	r2, r3
- 8000a6e:	f003 0303 	and.w	r3, r3, #3
- 8000a72:	f002 0203 	and.w	r2, r2, #3
- 8000a76:	bf58      	it	pl
- 8000a78:	4253      	negpl	r3, r2
- 8000a7a:	4a23      	ldr	r2, [pc, #140]	; (8000b08 <FSM_Settings_run+0x3ec>)
- 8000a7c:	6013      	str	r3, [r2, #0]
 				scanMode = INIT;
- 8000a7e:	4b23      	ldr	r3, [pc, #140]	; (8000b0c <FSM_Settings_run+0x3f0>)
- 8000a80:	220a      	movs	r2, #10
- 8000a82:	601a      	str	r2, [r3, #0]
+ 8000a66:	4b28      	ldr	r3, [pc, #160]	; (8000b08 <FSM_Settings_run+0x3ec>)
+ 8000a68:	220a      	movs	r2, #10
+ 8000a6a:	601a      	str	r2, [r3, #0]
+				blinkyMode = INIT;
+ 8000a6c:	4b27      	ldr	r3, [pc, #156]	; (8000b0c <FSM_Settings_run+0x3f0>)
+ 8000a6e:	220a      	movs	r2, #10
+ 8000a70:	601a      	str	r2, [r3, #0]
 				setTimer3(1000);
- 8000a84:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
- 8000a88:	f000 fda4 	bl	80015d4 <setTimer3>
+ 8000a72:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
+ 8000a76:	f000 fdad 	bl	80015d4 <setTimer3>
+				modeFSM = (modeFSM + 1) % 4;
+ 8000a7a:	4b25      	ldr	r3, [pc, #148]	; (8000b10 <FSM_Settings_run+0x3f4>)
+ 8000a7c:	681b      	ldr	r3, [r3, #0]
+ 8000a7e:	3301      	adds	r3, #1
+ 8000a80:	425a      	negs	r2, r3
+ 8000a82:	f003 0303 	and.w	r3, r3, #3
+ 8000a86:	f002 0203 	and.w	r2, r2, #3
+ 8000a8a:	bf58      	it	pl
+ 8000a8c:	4253      	negpl	r3, r2
+ 8000a8e:	4a20      	ldr	r2, [pc, #128]	; (8000b10 <FSM_Settings_run+0x3f4>)
+ 8000a90:	6013      	str	r3, [r2, #0]
 			}
 			if (isSelectMode() == 1)
- 8000a8c:	f7ff fb5e 	bl	800014c <isSelectMode>
- 8000a90:	4603      	mov	r3, r0
- 8000a92:	2b01      	cmp	r3, #1
- 8000a94:	d125      	bne.n	8000ae2 <FSM_Settings_run+0x3c6>
+ 8000a92:	f7ff fb5b 	bl	800014c <isSelectMode>
+ 8000a96:	4603      	mov	r3, r0
+ 8000a98:	2b01      	cmp	r3, #1
+ 8000a9a:	d121      	bne.n	8000ae0 <FSM_Settings_run+0x3c4>
 			{
 				status = INIT;
- 8000a96:	4b1b      	ldr	r3, [pc, #108]	; (8000b04 <FSM_Settings_run+0x3e8>)
- 8000a98:	220a      	movs	r2, #10
- 8000a9a:	601a      	str	r2, [r3, #0]
-				scanMode = INIT;
- 8000a9c:	4b1b      	ldr	r3, [pc, #108]	; (8000b0c <FSM_Settings_run+0x3f0>)
+ 8000a9c:	4b19      	ldr	r3, [pc, #100]	; (8000b04 <FSM_Settings_run+0x3e8>)
  8000a9e:	220a      	movs	r2, #10
  8000aa0:	601a      	str	r2, [r3, #0]
-				blinkyMode = INIT;
- 8000aa2:	4b1b      	ldr	r3, [pc, #108]	; (8000b10 <FSM_Settings_run+0x3f4>)
+				scanMode = INIT;
+ 8000aa2:	4b19      	ldr	r3, [pc, #100]	; (8000b08 <FSM_Settings_run+0x3ec>)
  8000aa4:	220a      	movs	r2, #10
  8000aa6:	601a      	str	r2, [r3, #0]
+				blinkyMode = INIT;
+ 8000aa8:	4b18      	ldr	r3, [pc, #96]	; (8000b0c <FSM_Settings_run+0x3f0>)
+ 8000aaa:	220a      	movs	r2, #10
+ 8000aac:	601a      	str	r2, [r3, #0]
 				setTimer3(1000);
- 8000aa8:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
- 8000aac:	f000 fd92 	bl	80015d4 <setTimer3>
-				setTimer4(500);
- 8000ab0:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
- 8000ab4:	f000 fda8 	bl	8001608 <setTimer4>
+ 8000aae:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
+ 8000ab2:	f000 fd8f 	bl	80015d4 <setTimer3>
 				modeFSM = (modeFSM + 1) % 4;
- 8000ab8:	4b13      	ldr	r3, [pc, #76]	; (8000b08 <FSM_Settings_run+0x3ec>)
- 8000aba:	681b      	ldr	r3, [r3, #0]
- 8000abc:	3301      	adds	r3, #1
- 8000abe:	425a      	negs	r2, r3
- 8000ac0:	f003 0303 	and.w	r3, r3, #3
- 8000ac4:	f002 0203 	and.w	r2, r2, #3
- 8000ac8:	bf58      	it	pl
- 8000aca:	4253      	negpl	r3, r2
- 8000acc:	4a0e      	ldr	r2, [pc, #56]	; (8000b08 <FSM_Settings_run+0x3ec>)
- 8000ace:	6013      	str	r3, [r2, #0]
+ 8000ab6:	4b16      	ldr	r3, [pc, #88]	; (8000b10 <FSM_Settings_run+0x3f4>)
+ 8000ab8:	681b      	ldr	r3, [r3, #0]
+ 8000aba:	3301      	adds	r3, #1
+ 8000abc:	425a      	negs	r2, r3
+ 8000abe:	f003 0303 	and.w	r3, r3, #3
+ 8000ac2:	f002 0203 	and.w	r2, r2, #3
+ 8000ac6:	bf58      	it	pl
+ 8000ac8:	4253      	negpl	r3, r2
+ 8000aca:	4a11      	ldr	r2, [pc, #68]	; (8000b10 <FSM_Settings_run+0x3f4>)
+ 8000acc:	6013      	str	r3, [r2, #0]
 			}
 			break;
- 8000ad0:	e007      	b.n	8000ae2 <FSM_Settings_run+0x3c6>
+ 8000ace:	e007      	b.n	8000ae0 <FSM_Settings_run+0x3c4>
 		default:
 			break;
- 8000ad2:	bf00      	nop
- 8000ad4:	e006      	b.n	8000ae4 <FSM_Settings_run+0x3c8>
+ 8000ad0:	bf00      	nop
+ 8000ad2:	e006      	b.n	8000ae2 <FSM_Settings_run+0x3c6>
 			break;
- 8000ad6:	bf00      	nop
- 8000ad8:	e004      	b.n	8000ae4 <FSM_Settings_run+0x3c8>
+ 8000ad4:	bf00      	nop
+ 8000ad6:	e004      	b.n	8000ae2 <FSM_Settings_run+0x3c6>
 			break;
- 8000ada:	bf00      	nop
- 8000adc:	e002      	b.n	8000ae4 <FSM_Settings_run+0x3c8>
+ 8000ad8:	bf00      	nop
+ 8000ada:	e002      	b.n	8000ae2 <FSM_Settings_run+0x3c6>
 			break;
- 8000ade:	bf00      	nop
- 8000ae0:	e000      	b.n	8000ae4 <FSM_Settings_run+0x3c8>
+ 8000adc:	bf00      	nop
+ 8000ade:	e000      	b.n	8000ae2 <FSM_Settings_run+0x3c6>
 			break;
- 8000ae2:	bf00      	nop
+ 8000ae0:	bf00      	nop
 	}
 }
- 8000ae4:	bf00      	nop
- 8000ae6:	bd80      	pop	{r7, pc}
+ 8000ae2:	bf00      	nop
+ 8000ae4:	bd80      	pop	{r7, pc}
+ 8000ae6:	bf00      	nop
  8000ae8:	40010800 	.word	0x40010800
  8000aec:	200000a0 	.word	0x200000a0
  8000af0:	20000090 	.word	0x20000090
@@ -1475,9 +1477,9 @@ void FSM_Settings_run()
  8000afc:	51eb851f 	.word	0x51eb851f
  8000b00:	20000044 	.word	0x20000044
  8000b04:	20000034 	.word	0x20000034
- 8000b08:	20000084 	.word	0x20000084
- 8000b0c:	20000038 	.word	0x20000038
- 8000b10:	2000003c 	.word	0x2000003c
+ 8000b08:	20000038 	.word	0x20000038
+ 8000b0c:	2000003c 	.word	0x2000003c
+ 8000b10:	20000084 	.word	0x20000084
 
 08000b14 <init_Led>:
 int ledBuffer[2];

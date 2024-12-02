@@ -107,9 +107,10 @@ void FSM_Settings_run()
 				durationGreen = modifyGreen * 1000;
 
 				status = INIT;
-				modeFSM = (modeFSM + 1) % 4;
 				scanMode = INIT;
+				blinkyMode = INIT;
 				setTimer3(1000);
+				modeFSM = (modeFSM + 1) % 4;
 			}
 			if (isSelectMode() == 1)
 			{
@@ -117,7 +118,6 @@ void FSM_Settings_run()
 				scanMode = INIT;
 				blinkyMode = INIT;
 				setTimer3(1000);
-				setTimer4(500);
 				modeFSM = (modeFSM + 1) % 4;
 			}
 			break;
